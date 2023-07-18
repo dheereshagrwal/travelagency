@@ -6,7 +6,13 @@ import java.util.List;
 
 import org.junit.Test;
 
+/**
+ * This class tests the Destination class.
+ */
 public class DestinationTest {
+    /**
+     * This test checks if the constructor of the Destination class correctly initializes its fields.
+     */
     @Test
     public void testConstructor() {
         Destination destination = new Destination("Hawaii");
@@ -14,6 +20,9 @@ public class DestinationTest {
         assertTrue(destination.getActivities().isEmpty());
     }
 
+    /**
+     * This test checks if the addActivity method of the Destination class correctly adds activities to the destination.
+     */
     @Test
     public void testAddActivity() {
         Destination destination = new Destination("Hawaii");

@@ -4,7 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * This class tests the Activity class.
+ */
 public class ActivityTest {
+    /**
+     * This test checks if the constructor of the Activity class correctly initializes its fields.
+     */
     @Test
     public void testConstructor() {
         Destination destination = new Destination("Hawaii");
@@ -16,15 +22,18 @@ public class ActivityTest {
         assertEquals(destination, activity.getDestination());
     }
 
+    /**
+     * This test checks if the enroll method of the Activity class correctly enrolls participants and updates the enrolled count.
+     */
     @Test
     public void testEnroll() {
         Destination destination = new Destination("Hawaii");
         Activity activity = new Activity("Surfing", "Surfing in Hawaii", 100.0, 2, destination);
         assertEquals(0, activity.getEnrolled());
-        assertTrue(activity.enroll());
+        assertTrue(activity.enroll()); // Enroll first participant
         assertEquals(1, activity.getEnrolled());
-        assertTrue(activity.enroll());
+        assertTrue(activity.enroll()); // Enroll second participant
         assertEquals(2, activity.getEnrolled());
-        assertFalse(activity.enroll());
+        assertFalse(activity.enroll()); // Attempt to enroll third participant (should fail)
     }
 }
