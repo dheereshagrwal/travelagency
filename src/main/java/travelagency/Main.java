@@ -2,8 +2,10 @@ package travelagency;
 
 public class Main {
     public static void main(String[] args) {
+        // Create a new travel package
         TravelPackage travelPackage = new TravelPackage("Summer Adventure", 10);
 
+        // Create destinations and activities
         Destination beach = new Destination("Beach");
         Activity swimming = new Activity("Swimming", "Swim in the ocean", 10, 5, beach);
         Activity sunbathing = new Activity("Sunbathing", "Relax on the beach", 5, 10, beach);
@@ -16,9 +18,11 @@ public class Main {
         mountains.addActivity(hiking);
         mountains.addActivity(camping);
 
+        // Add destinations to travel package
         travelPackage.addDestination(beach);
         travelPackage.addDestination(mountains);
 
+        // Create passengers and enroll them in activities
         Passenger alice = new StandardPassenger("Alice", 1, 50);
         alice.enroll(swimming);
         alice.enroll(hiking);
@@ -33,6 +37,7 @@ public class Main {
         charlie.enroll(hiking);
         charlie.enroll(camping);
 
+        // Add passengers to travel package
         travelPackage.addPassenger(alice);
         travelPackage.addPassenger(bob);
         travelPackage.addPassenger(charlie);
@@ -40,6 +45,7 @@ public class Main {
         // Print itinerary
         System.out.println("--- Itinerary ---");
         travelPackage.printItinerary();
+        
         // Print passenger list
         System.out.println("--- Passenger List ---");
         travelPackage.printPassengerList();
@@ -51,6 +57,5 @@ public class Main {
         // Print details of activities with available spaces
         System.out.println("--- Available Activities ---");
         travelPackage.printAvailableActivities();
-
     }
 }

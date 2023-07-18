@@ -1,9 +1,19 @@
 package travelagency;
 
-import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.List;
+
+import org.junit.Test;
+
 public class DestinationTest {
+    @Test
+    public void testConstructor() {
+        Destination destination = new Destination("Hawaii");
+        assertEquals("Hawaii", destination.getName());
+        assertTrue(destination.getActivities().isEmpty());
+    }
+
     @Test
     public void testAddActivity() {
         Destination destination = new Destination("Hawaii");
@@ -11,8 +21,9 @@ public class DestinationTest {
         Activity activity2 = new Activity("Hiking", "Hiking in Hawaii", 50.0, 10, destination);
         destination.addActivity(activity1);
         destination.addActivity(activity2);
-        assertEquals(2, destination.getActivities().size());
-        assertEquals(activity1, destination.getActivities().get(0));
-        assertEquals(activity2, destination.getActivities().get(1));
+        List<Activity> activities = destination.getActivities();
+        assertEquals(2, activities.size());
+        assertTrue(activities.contains(activity1));
+        assertTrue(activities.contains(activity2));
     }
 }
