@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class Passenger {
     private String name;
     private int number;
-    private List<Activity> activities;
+    protected List<Activity> activities;
 
     /**
      * Creates a new Passenger with the given name and number.
@@ -37,11 +37,11 @@ public abstract class Passenger {
     public void printDetails() {
         System.out.println("Passenger Name: " + name);
         System.out.println("Passenger Number: " + number);
-        System.out.println("");
         for (Activity activity : activities) {
-            System.out.println("Activity: " + activity.getName());
-            System.out.println("Destination: " + activity.getDestination().getName());
-            System.out.println("Cost: " + activity.getCost());
+            System.out.println("    Activity: " + activity.getName());
+            System.out.println("    Destination: " + activity.getDestination().getName());
+            System.out.println("    Cost: " + activity.getCost());
+            System.out.println();
         }
     }
 

@@ -43,19 +43,19 @@ public class Main {
         travelPackage.addPassenger(charlie);
 
         // Print itinerary
-        System.out.println("--- Itinerary ---");
-        travelPackage.printItinerary();
+         System.out.println("--- 1. Itinerary ---");
+         travelPackage.printItinerary();
         
-        // Print passenger list
-        System.out.println("--- Passenger List ---");
-        travelPackage.printPassengerList();
+         // Print passenger list
+         System.out.println("\n--- 2. Passenger List ---");
+         travelPackage.printPassengerList();
 
         // Print details of individual passenger
-        System.out.println("--- Passenger Details ---");
+        System.out.println("\n--- 3. Passenger Details ---");
         alice.printDetails();
 
-        // Print details of activities with available spaces
-        System.out.println("--- Available Activities ---");
-        travelPackage.printAvailableActivities();
+         // Print details of activities with available spaces
+         System.out.println("\n--- 4. Available Activities ---");
+         travelPackage.printAvailableActivities();
     }
 }

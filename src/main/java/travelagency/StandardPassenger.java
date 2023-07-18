@@ -28,6 +28,7 @@ public class StandardPassenger extends Passenger {
     public boolean enroll(Activity activity) {
         if (balance >= activity.getCost()) {
             balance -= activity.getCost();
+            activities.add(activity);
             return true;
         }
         return false;
